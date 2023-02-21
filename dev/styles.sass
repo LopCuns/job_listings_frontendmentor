@@ -9,6 +9,7 @@ body
     margin: 0
     background-color: mv.$lgCyanB
     font-family: 'League Spartan', sans-serif
+    overflow-x: hidden
 h1,h2,h3,h4,h5,h6,p
     margin: 0
 //UTILITIES
@@ -23,6 +24,7 @@ h1,h2,h3,h4,h5,h6,p
 .main
     @include mv.flex()
     padding: 1rem
+    gap: 3rem
 .business
     position: relative
     width: 20rem
@@ -39,6 +41,10 @@ h1,h2,h3,h4,h5,h6,p
         position: relative
         top: -1rem
         width: 3rem
+        height: 3rem
+        border-radius: 50%
+        object-fit: contain
+        
     &__text
         position: relative
         @include mv.flex(column,wrap,flex-start,flex-start)
@@ -83,6 +89,13 @@ h1,h2,h3,h4,h5,h6,p
             border-radius: calc(mv.$borderR / 2)
             background-color: mv.$lgCyanFT
             color: mv.$ddCyan
+            transition: background-color .3s,color  .3s
+            cursor: pointer
+            &:hover
+                background-color: mv.$ddCyan
+                color: #fff
+            &::selection
+                display: none
 
 
 
@@ -99,6 +112,7 @@ h1,h2,h3,h4,h5,h6,p
         &__logo
             position: static
             width: 5rem
+            height: 5rem
         &__text
             gap: .5rem
             margin: 0
@@ -106,7 +120,6 @@ h1,h2,h3,h4,h5,h6,p
                 display: none
             &__top
                 width: 100%
-                justify-content: center
             &__name
                 margin: 0
             &__more

@@ -24,33 +24,27 @@
       <img class="header__image" src="assets/images/bg-header-mobile.svg" alt="background header top">
     </picture>
   </header>
-  <main class="main">
-    <article class="business">
-      <img class="business__logo" alt="business logo" src="assets/images/photosnap.svg">
-      <section class="business__text">
-        <div class="business__text__top">
-          <p class="business__text__name">Photosnap</p>
-          <p class="business__text__new">new!</p>
-          <p class="business__text__featured">featured</p>
-        </div>
-        <h2 class="business__text__position">Senior Frontend Developer</h2>
-        <div class="business__text__more">
-          <span class="business__text__more__when">1d ago</span> ·
-          <span class="business__text__more__contract">Full Time</span> ·
-          <span class="business__text__more__where">USA only</span> 
-        </div>
-      </section>
-      <section class="business__filters">
-        <p class="business__filters__filter">Frontend</p>
-        <p class="business__filters__filter">Senior</p>
-        <p class="business__filters__filter">HTML</p>
-        <p class="business__filters__filter">CSS</p>
-        <p class="business__filters__filter">Javascript</p>
-      </section>
-  </article>
+  <main class="main" id="main">
   </main>
 
-
+<template id="businessCard">
+  <article class="business">
+    <img class="business__logo" alt="business logo" src="">
+    <section class="business__text">
+      <div class="business__text__top">
+        <p class="business__text__name"></p>
+      </div>
+      <h2 class="business__text__position"></h2>
+      <div class="business__text__more">
+        <span class="business__text__more__when"></span> ·
+        <span class="business__text__more__contract"></span> ·
+        <span class="business__text__more__where"></span> 
+      </div>
+    </section>
+    <section class="business__filters">
+    </section>
+</article>
+</template>
   <!-- Item Start -->
   Photosnap
   New!
@@ -73,5 +67,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script src="public/main.js" type="module"></script>
 </body>
 </html>

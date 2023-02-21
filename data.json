@@ -148,5 +148,20 @@
     "location": "Worldwide",
     "languages": ["JavaScript"],
     "tools": ["React", "Sass"]
+  },
+  {
+    "id": 11,
+    "company": "Wikiprogram",
+    "logo": "./images/serpienteWikiProgram.png",
+    "new": true,
+    "featured": true,
+    "position": "Front-end Dev",
+    "role": "Frontend",
+    "level": "Senior",
+    "postedAt": "3mo ago",
+    "contract": "Full Time",
+    "location": "Spain only",
+    "languages": ["JavaScript","HTML","CSS"],
+    "tools": ["React", "Sass"]
   }
 ]
