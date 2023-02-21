@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="public/styles.css">
   <title>Frontend Mentor | Job Listings</title>
 
@@ -15,7 +18,12 @@
   </style>
 </head>
 <body>
-
+  <header class="header">
+    <picture>
+      <source media="(min-width:1440px)" srcset="assets/images/bg-header-desktop.svg">
+      <img class="header__image" src="assets/images/bg-header-mobile.svg" alt="background header top">
+    </picture>
+  </header>
   <main class="main">
     <article class="business">
       <img class="business__logo" alt="business logo" src="assets/images/photosnap.svg">
@@ -29,7 +37,7 @@
         <div class="business__text__more">
           <span class="business__text__more__when">1d ago</span> ·
           <span class="business__text__more__contract">Full Time</span> ·
-          <span class="business__text__more__where">USA Only</span> 
+          <span class="business__text__more__where">USA only</span> 
         </div>
       </section>
       <section class="business__filters">
