@@ -1,0 +1,56 @@
+@use "mv"
+// CSS RESET
+*,::after,::before
+    box-sizing: border-box
+
+body
+    width: 100vw
+    min-height: 100vh
+    margin: 0
+    background-color: mv.$lgCyanB
+
+//CSS CLASSES MOBILE
+.main
+    padding: 1rem
+.business
+    position: relative
+    background-color: red
+    width: 20rem
+    border-radius: mv.$borderR
+    &__logo
+        position: relative
+        top: -1rem
+        left: 1rem
+        background-color: pink
+        width: 3rem
+    &__text
+        @icludes mv.flex(column)
+        background-color: green
+        &__top
+            background-color: blue
+            @include mv.flex(row,wrap,flex-start)
+            gap: .5rem
+            padding: 0 1rem
+        &__name
+            margin-right: 2rem
+        &__position
+            background-color: orange
+        &__more
+            background-color: purple
+            &__when
+                background-color: cyan
+            &__contract
+                background-color: yellow
+            &__where
+                background-color: gray
+    &__filters
+        background-color: skyblue
+        @include mv.flex($justify : flex-start)
+        gap: 1rem
+        &__filter
+            background-color: lime
+    
+
+
+
+//CSS CLASSES DESKTOP

@@ -1,0 +1,15 @@
+//VARIABLES
+//--COLORS
+$ddCyan :hsl(180, 29%, 50%)
+$lgCyanB : hsl(180, 52%, 96%)
+$lgCyanFT : hsl(180, 31%, 95%)
+$dgCyan : hsl(180, 8%, 52%)
+$vdgCyan : hsl(180, 14%, 20%)
+//--MISC
+$borderR : 10px
+//MIXINS
+@mixin flex($direction : row,$wrap : wrap,$justify : center,$align : center)
+    display: flex
+    flex-flow: $direction $wrap
+    justify-content: $justify
+    align-items: $align
