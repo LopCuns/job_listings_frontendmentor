@@ -12,8 +12,15 @@ body
     overflow-x: hidden
 h1,h2,h3,h4,h5,h6,p
     margin: 0
+button
+    margin: 0
+    border: none
+    background: none
+    font-family: 'League Spartan',sans-serif
+    cursor: pointer
 //UTILITIES
-    
+.hidden
+    visibility: hidden
 //CSS CLASSES MOBILE
 .header
     background-color: mv.$ddCyan
@@ -96,8 +103,36 @@ h1,h2,h3,h4,h5,h6,p
                 color: #fff
             &::selection
                 display: none
-
-
+.filterBar
+    @include mv.flex($justify : space-between)
+    width: max(20rem,80%)
+    min-height: 4rem
+    padding: 0rem 2rem
+    background-color: #fff
+    &__filters
+        @include mv.flex($justify: flex-start)
+        gap: 1rem
+        width: 70%
+        &__filter
+            @include mv.flex($align : stretch)
+            gap: .2rem
+            overflow: hidden
+            border-radius: calc(mv.$borderR / 2)
+            background-color: mv.$lgCyanFT
+            color: mv.$ddCyan
+            font-weight: 700
+            &__name
+                margin: .5rem .2rem .5rem .5rem 
+            &__button
+                padding: 0 .7rem
+                background-color: mv.$ddCyan
+                color: #fff
+                font:
+                    size: 1.4em
+                    weight: 700 
+    &__clear
+        font-weight: 700
+        color: mv.$dgCyan
 
 //CSS CLASSES DESKTOP
 
@@ -130,3 +165,7 @@ h1,h2,h3,h4,h5,h6,p
             &__filter
                 padding: .5rem 1rem
                 border-radius: calc(mv.$borderR / 2)
+
+
+.hiddenBusiness
+    display: none

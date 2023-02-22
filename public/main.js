@@ -1,8 +1,11 @@
 import { j,els } from "./jlib.js"
 
 
-j.ev(window,'DOMContentLoaded',async ()=>{
+j.ev(window,'DOMContentLoaded',()=>{
     try{
+        const main = j.$('main')
+        const filterBar = j.$('filterBar')
+
         async function createCards(){
         const toFetch = await fetch('../data.json'),
         json = await toFetch.json()
@@ -12,8 +15,8 @@ j.ev(window,'DOMContentLoaded',async ()=>{
         statusText : toFetch.statusText
         }
 
-        const main = j.$('main'),
-        fragment = document.createDocumentFragment()
+        
+        const fragment = document.createDocumentFragment()
 
         Array.from(json).forEach(application=>{
             const card = els.businessCard()
@@ -35,6 +38,26 @@ j.ev(window,'DOMContentLoaded',async ()=>{
 
         }
         createCards()
+        j.ev(main,'click',(e)=>{
+            if(e.target.className ==='filterBar__filters__filter__button'){
+            const filterElement = e.target.closest('.filterBar__filters__filter'),
+            filterName = filterElement.getAttribute('data-filter')
+            els.removeFilter(filterName)
+            filterBar.removeChild(filterElement)
+            els.filterBusinesses()
+            }
+            else if(e.target.className === 'business__filters__filter'){
+                const filter = e.target.textContent
+                if(!(j.appliedFilters() || '').includes(filter)) j.append(filterBar,els.addFilter(filter))
+                els.filterBusinesses()
+            }
+        })
+        j.ev(j.$('clearFilters'),'click',()=>{
+            sessionStorage.removeItem('appliedFilters')
+            filterBar.textContent = ""
+            j.$('filterBox').classList.add('hidden')
+            j.businessElements().forEach(business=>business.classList.remove('hiddenBusiness'))
+        })
     }
     catch(err){
         if(err.status) console.warn(`an error has ocurred ${err.status} : ${err.statusText}`)
